@@ -190,7 +190,7 @@
 	oldNode.prev.next = node;
 	oldNode.prev = node;
 
-	[self.childs addObject:node];
+	[self.childs insertObject:node atIndex:[self.childs indexOfObject:oldNode]];
 }
 
 - (void)insertNode:(SamuraiTreeNode *)node afterNode:(SamuraiTreeNode *)oldNode
@@ -211,7 +211,7 @@
 	oldNode.next.prev = node;
 	oldNode.next = node;
 
-	[self.childs addObject:node];
+	[self.childs insertObject:node atIndex:[self.childs indexOfObject:oldNode]+1];
 }
 
 - (void)changeNode:(SamuraiTreeNode *)node withNode:(SamuraiTreeNode *)newNode
